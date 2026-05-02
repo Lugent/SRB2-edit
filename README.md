@@ -1,55 +1,55 @@
-> [!IMPORTANT]  
-> This fork uses a different configuration file: `econfig.cfg`
-> 
-> If needed, copy paste your `config.cfg` and rename it to `econfig.cfg`
+# SRB2-edit
 
-## Compiling
-
-See [SRB2 Wiki/Source code compiling](http://wiki.srb2.org/wiki/Source_code_compiling)
-
-If you get compilation errors referring to booleans and/or pointers, try reverting [this commit](https://github.com/luigi-budd/SRB2-edit/commit/8b70f986a65a735030e611c0bcf36161b4cdd505) and/or [this commit](https://github.com/luigi-budd/SRB2-edit/commit/2160051f055eed0fa1cdf0f4034534f60dfe2c0a) and [this commit](https://github.com/luigi-budd/SRB2-edit/commit/0cb43b90763d58386bf97ab6fcf732636cb5d48e) (or [this one](https://github.com/luigi-budd/SRB2-edit/commit/6acca940af796845b64ec6a3db74451735c9c023))
+A custom net-compatible build of SRB2 that includes a plethora of fixes, improvements, and new features.
 
 # Installation:
 
-You can compile the source code normally (see "Compiling") and put the binary in your SRB2 directory. No additional assets required, it works right out the box!
+You can either use the Github Actions build (go to the Actions tab on the top, then select the one that corresponds to your platform; x64 Windows builds require different DLLs) or compile from the source code.
+
+It works without any additional assets, just copy the build to your existing SRB2 folder and it will work fine.
+
+> [!IMPORTANT]  
+> This fork uses a different config file: `econfig.cfg`
+> 
+> If needed, copy/paste your `config.cfg` and rename it to `econfig.cfg`.
 
 # Changes
 
 ## HUD
-- CEchos/CSays print message into console ("`showcsays`")
-- Joining netgame shows progress bar on "checking files" ([Lugent's PR](https://git.do.srb2.org/STJr/SRB2/-/merge_requests/2446) [Lugent's PR](https://git.do.srb2.org/STJr/SRB2/-/merge_requests/2556))
-- Easily rejoin servers you've played before! ("`connect last`", Multiplayer -> Rejoin Previous Servers...)
-- Draw gif information to hud ("`moviemodeinfo`")
-- Crosshairs can invert pixels behind, to improve their visibility ("`crosshair_invert`" and "`crosshair2_invert`")
+- Change menu's background color! ("`menubgcolor`", Video Options -> Heads-Up Display, "Menu Background Color")
+- Lowercase menus inspired by SRB2Kart Saturn! ("`menucaps`", Video Options -> Heads-Up Display, "Uppercase Menus")
+- The background of the Addons menu is now translucent.
+- Addons menu uses thin font.
+- Player names on the rankings uses a thin font.
+- Toggle screen wipes to speed up gameplay! ("`wipes`", not effective in Marathon Run)
+- "Quit Game" and "Abort" options are red colored.
+- Perfstats blue text uses sky color instead.
 - Thin captions and thin FPS! (Load "tinyfontfix.pk3" for music note on thin captions)
-- Countdown beep isn't ear piercingly loud!
-- Snake download game background fixed!
+- Tics per second counter! ("`showtps`") (Code from [SRB2Classic](https://codeberg.org/srb2classic/srb2classic) and TSoURDt3rd)
+- See your ping in frame delay instead of milliseconds! ("`pingmeasurement`")
+- Compact FPS/TPS info! ("`compactinfo`")
+
 - Master Server list background for better readability!
 - Server Menu before joining! ("`showserverinfo`") (Code from [SRB2Classic](https://codeberg.org/srb2classic/srb2classic))
-- See your ping in frame delay instead of milliseconds! ("`pingmeasurement`")
-- Tics per second counter! ("`showtps`") (Code from [SRB2Classic](https://codeberg.org/srb2classic/srb2classic) and TSoURDt3rd)
-- Compact FPS/TPS info! ("`compactinfo`")
-- Lowercase menus inspired by SRB2Kart Saturn! ("`menucaps`")
-- Toggle screen wipes to speed up gameplay! ("`wipes`", not effective in Marathon Mode)
-- Change menu's background color! ("`menubgcolor`")
-- Player names on the rankings uses a thin font.
-- Addons menu uses thin font.
-- "Quit Game" and "Abort" options are red colored.
-- The Background of the addons menu now are translucent.
-- Perfstats blue text uses sky color instead.
+- Joining netgame shows progress bar on "checking files" ([Lugent's PR](https://git.do.srb2.org/STJr/SRB2/-/merge_requests/2446) [Lugent's PR](https://git.do.srb2.org/STJr/SRB2/-/merge_requests/2556))
+- Snake download game background fixed!
+- Countdown beep isn't ear piercingly loud!
+- Easily rejoin servers you've played before! ("`connect last`", Multiplayer -> Rejoin Previous Servers...)
+- CEchos/CSays print message into console ("`showcsays`")
+- Crosshairs can invert pixels behind, to improve their visibility ("`crosshair_invert`" and "`crosshair2_invert`")
 
 ## Visual
-- Toggable mobj pitch/roll functional (3d rotation for models on slopes, like DRRR). Option located in Video Settings -> Level -> "Pitch/Roll Rotation"
+- Toggable mobj pitch/roll functional (3D rotation for models on slopes, like DRRR). Option located in Video Options -> Level, "Pitch/Roll Rotation"
 - Ring-Racers-styled screen quakes! ("`rr_quakes`" in console)
 - Toggleable Screenshake effects! ("`earthquake`", ported from SRB2Classic by @archiNiko)
 - Better "Fake Contrast"! (https://git.do.srb2.org/STJr/SRB2/-/merge_requests/2680, @GLideKS)
 - View rollangle is interpolated!
 - Experimental translation support for models! ("`gl_modeltranslations`")
 - Render distance for OpenGL! ("`gr_renderdistance`", https://git.srb2.org/Hanicef/SRB2Classic/-/merge_requests/4, @GLideKS)
-- Configurable minimum sector brightress! ("`r_secbright`", ported from [SRB2 Legacy](https://github.com/srb2-preservation/srb2-legacy))
+- Configurable minimum sector brightness! ("`r_secbright`", ported from [SRB2 Legacy](https://github.com/srb2-preservation/srb2-legacy))
 - Added 1360x768 resolution (personal use)
 - Light Dithering from [SRB2Classic](https://codeberg.org/srb2classic/srb2classic)
-- Removed RR's fake contrast since it makes brightress off on walls.
+- Removed RR's fake contrast since it makes brightness off on walls.
 
 ## Gameplay / Netplay
 - Skin change at any time. Turn off `restrictmoveskinchange` to be able to do this.
@@ -71,17 +71,18 @@ You can compile the source code normally (see "Compiling") and put the binary in
 - "`getlogfile`" command (Prints the absolute path of the current log, useful when latest-log.txt is sym-linked to a different log)
 
 ## GIFs
+- Draw gif information to hud ("`moviemodeinfo`", Video Options -> Diagnostic, "Show Movie Info")
 - Adjustable gif size cap, toggable too! (`gif_maxsize`, "Max GIF Size (MB)")
     - ^ When gif is capped, gif_rolling allows for another gif to immediately start! (`gif_rolling`, "Keep recording when capped")
 - Pause GIFs *WHILE* Recording! (Bound to F2 by default)
 
-## Console && Misc. Commands
+## Console & Misc. Commands
 - `help` now lists commands and variables by origin. Parameters are as follows:
   | Param      | Desc      |
   | ------------- | ------------- |
   | `-v` | Only show variables and/or commands from vanilla SRB2 only.  |
-  | `-c` | Only show variables and/or commands that are in SRB2-edit, and not vanilla. |
-  | `-a` | Only show variables and/or commands created by addons |
+  | `-c` | Only show variables and/or commands that are in this build, and not vanilla. |
+  | `-a` | Only show variables and/or commands created by addons. |
 
 - Console variables can no longer be used as an argument for `help`, they now print their info instead of just their current and default value. "`cvarinfo`" lets you hide the flags and origin sections ("Show All" by default).
 - "`cycle`" command (`cycle <cvar> [values]`): Inaccessible by Lua. Cycles given values on the cvar if the current value is found in the list (also loops around). Fails if the current value is not found, unless `-b` is specified (starts at the first arg if so).
@@ -97,10 +98,10 @@ You can compile the source code normally (see "Compiling") and put the binary in
   Example:
   ```lua
   if (gks_locallyloading) then
-    -- do client-side here
+    -- do client-side logic here
     return
   end
-  -- do synched here
+  -- do synched logic here
   ```
 - "`demoplayback`" (Read only) (boolean) : True if viewing a demo.
 
@@ -108,17 +109,17 @@ You can compile the source code normally (see "Compiling") and put the binary in
 - `P_GetLocalAiming(player_t player)` : Returns the angle_t `aiming` of `player` if they are a local player. Returns 0 otherwise.
 - `P_GetLocalAngle(player_t player)` : Returns the angle_t `angle` of `player` if they are a local player. Returns 0 otherwise.
 
-- `R_CreateTranslation(string name, string translations...)` : Adds a custom translation, using the same parser as TRNSLATE.
+- `R_CreateTranslation(string name, string translation, ...)` : Adds a custom translation, using the same parser as TRNSLATE.
 - `R_RemoveTranslation(string name)` : Removes a custom translation. Can only remove translations made by Lua.
 - `R_TranslationExists(string name)` : Returns true if a custom translation with a given name exists, false if not.
 
-- `io.openlump(string filename, [string mode])` : Similar to `io.openlocal`, but reads a lump inside any addon loaded. Two new options are supported: `f` to scan addons forward from start to end, and `m` to only search in game-modifying addons.
+- `io.openlump(string filename, [string mode])` : Similar to `io.openlocal`, but reads a lump inside any addon loaded. Two new options are supported: `f` to scan addons forward from start to end, and `m` to only search in game-modifying addons (exclude local or non-important addons).
 
   Example:
   ```lua
-  local file = io.openlump("lua/main.lua","r")
+  local file = io.openlump("lua/main.lua", "r")
   
-  if file
+  if file then
   	local dat = file:read("*a")
   	print("Length: "..dat:len())
   	file:close()
@@ -132,7 +133,7 @@ You can compile the source code normally (see "Compiling") and put the binary in
 ### For "uncappedgame" HUD hooks:
 - `v.timeFraction()` : Returns the value of `rendertimefrac` [0, FRACUNIT]. "The fraction of a tic being drawn (for interpolation between two tics)"
 - `v.deltaTics()` : Returns the value of `renderdeltatics`. "Evaluated delta tics for this frame (how many tics since the last frame)"
-- `v.isNewTic()` : Returns whether the current render is the start of a new gamelogic tic or not. (boolean)
+- `v.isNewTic()` : Returns whether the current frame is the start of a new gamelogic tic or not. (boolean)
 - `v.usingInterpolation()` : Returns whether or not frame interpolation is enabled. (boolean)
 
 Example script that uses manual interpolation:
@@ -156,7 +157,7 @@ end,"uncappedgame")
 - `"uncappedgame"` : A new hud hook that runs during gameplay, except not bound to the 35 fps limit. Introduces new functions into the draw for manual interpolation. (WIP)
 
 ## mobj_t
-- `mobj.pitch/roll` : Now rotates mobjs in 3D space, including models
+- `mobj.pitch/roll` : Now rotates mobjs and models in 3D space.
 - `mobj.resetinterp` : Resets ALL interpolation values. (`P_SetOrigin` only resets positional interpolation values)
 
 
@@ -177,7 +178,7 @@ end)
 
 ## player_t
 - `player.ipaddress` (string) (read only): For use in moderation addons, this only returns a string for the server of the players IP address. Clients _cannot_ see other clients' IP addresses. The only way for other clients to know is if the server sends a command with them or something :p
-- `player.muted` (boolean) (read + write): Returns whether or not the player is muted. (though changes may not be reflected in servers not running edit)
+- `player.muted` (boolean) (read + write): Returns whether or not the player is muted. (though changes may not be reflected in servers not running this build)
 
 
 ## renderflags_t
@@ -189,6 +190,12 @@ end)
 ## eflags_t
 - `MFE_NOPITCHROLLEASING` : When "pitchroll-easing" is toggled, adding this eflag will not ease the pitch/roll axis this tic. Removed at the end of MobjThinker.
 
+# Compiling
+
+See [SRB2 Wiki/Source code compiling](http://wiki.srb2.org/wiki/Source_code_compiling)
+
+If you get compilation errors referring to booleans/pointers, try reverting any of these commits: [8b70f98](https://github.com/luigi-budd/SRB2-edit/commit/8b70f986a65a735030e611c0bcf36161b4cdd505), [2160051](https://github.com/luigi-budd/SRB2-edit/commit/2160051f055eed0fa1cdf0f4034534f60dfe2c0a), [0cb43b9](https://github.com/luigi-budd/SRB2-edit/commit/0cb43b90763d58386bf97ab6fcf732636cb5d48e), [6acca94](https://github.com/luigi-budd/SRB2-edit/commit/6acca940af796845b64ec6a3db74451735c9c023)
+
 
 # Sonic Robo Blast 2
 [![latest release](https://badgen.net/github/release/STJr/SRB2/stable)](https://github.com/STJr/SRB2/releases/latest)
@@ -199,12 +206,12 @@ end)
 
 [Sonic Robo Blast 2](https://srb2.org/) is a 3D Sonic the Hedgehog fangame based on a modified version of [Doom Legacy](http://doomlegacy.sourceforge.net/).
 
-## Dependencies
-- SDL2 (Linux/OS X only)
-- SDL2-Mixer (Linux/OS X only)
-- libupnp (Linux/OS X only)
-- libgme (Linux/OS X only)
-- libopenmpt (Linux/OS X only)
+## Dependencies (Linux/macOS only)
+- SDL2
+- SDL2-Mixer
+- libupnp
+- libgme
+- libopenmpt
 
 ## Disclaimer
 Sonic Team Junior is in no way affiliated with SEGA or Sonic Team. We do not claim ownership of any of SEGA's intellectual property used in SRB2.
