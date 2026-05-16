@@ -133,7 +133,7 @@ static void CL_DrawAddonTypes(void)
 		{
 			case FS_FOUND:
 			case FS_OPEN:
-				addontypes_downloaded[fileneeded[i].type]++;
+				addontypes_downloaded[fileneeded[i].addontype]++;
 			break;
 
 			default:
