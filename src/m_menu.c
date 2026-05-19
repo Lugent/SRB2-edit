@@ -1546,14 +1546,12 @@ static menuitem_t OP_ClientOptionsMenu[] =
 
 	{IT_HEADER, 						 NULL, "Server Browser", 			NULL,			 60},
 	{IT_STRING | IT_CVAR,				 NULL, "Timeout",		&cv_masterserver_timeout,    72},
+	{IT_STRING | IT_CVAR, 				 NULL, "Show Server Info",	&cv_showserverinfo,   	 82},
+	{IT_STRING | IT_CVAR, 				 NULL, "Return to Server Browser",	&cv_returnfromconnect, 92},
+	{IT_STRING | IT_CVAR, 				 NULL, "Show Addon Info",	&cv_showaddoninfo,		 102},
 
-	{IT_HEADER, 						 NULL, "Server Browser",	NULL,					 90},
-	{IT_STRING | IT_CVAR, 				 NULL, "Show Server Info",	&cv_showserverinfo,   	 102},
-	{IT_STRING | IT_CVAR, 				 NULL, "Return to Server Browser",	&cv_returnfromconnect, 112},
-	{IT_STRING | IT_CVAR, 				 NULL, "Show Addon Info",	&cv_showaddoninfo,		 122},
-
-	{IT_HEADER, 						NULL, "Diagnostic", 		NULL,					 140},
-	{IT_STRING | IT_CVAR, NULL, "Network Statistics",			&cv_netstat,				 152},
+	{IT_HEADER, 						NULL, "Diagnostic", 		NULL,					 120},
+	{IT_STRING | IT_CVAR, NULL, "Network Statistics",			&cv_netstat,				 132},
 };
 
 static menuitem_t OP_DataOptionsMenu[] =
