@@ -560,6 +560,8 @@ const char *I_GetJoyName(INT32 joyindex)
 	return NULL;
 }
 
+void I_SetJoystickFocus(void){}
+
 #ifndef NOMUMBLE
 #ifdef HAVE_MUMBLE
 // Best Mumble positional audio settings:
