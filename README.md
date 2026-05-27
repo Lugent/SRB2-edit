@@ -59,6 +59,7 @@ It works without any additional assets, just copy the build to your existing SRB
 
 ## Gameplay / Netplay
 - Skin change at any time
+- Savegame errors return to the title screen
 - Addfilelocal from SRB2K Saturn! (use "`addfilelocal`" command or press R-ALT in the addons menu)
 - Minimum input delay from SRB2Kart Saturn/Ring Racers! ("`mindelay`")
 - Improved startup times! (Code from [SRB2Classic](https://codeberg.org/srb2classic/srb2classic))
